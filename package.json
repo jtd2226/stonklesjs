@@ -27,14 +27,14 @@
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8"
   },
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Useful generic react components and styling",
-  "main": ".eslintrc.js",
   "files": [
     "lib"
   ],
-  "directories": {
-    "doc": "docs"
+  "exports": {
+    ".": "./lib/*",
+    "./*": "./lib/*"
   },
   "repository": {
     "type": "git",
@@ -50,5 +50,8 @@
   "bugs": {
     "url": "https://github.com/jtd2226/stonklesjs/issues"
   },
-  "homepage": "https://react.joeltdavis.com"
+  "homepage": "https://react.joeltdavis.com",
+  "engines": {
+    "node": "16.13.2"
+  }
 }
