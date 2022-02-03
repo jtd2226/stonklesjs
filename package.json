@@ -30,6 +30,9 @@
   "version": "1.0.0",
   "description": "Useful generic react components and styling",
   "main": ".eslintrc.js",
+  "exports": {
+    ".": "./lib/*"
+  },
   "directories": {
     "doc": "docs"
   },
