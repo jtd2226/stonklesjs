@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jtd2226/portfolio.git"
+    "url": "git+https://github.com/jtd2226/stonklesjs.git"
   },
   "keywords": [
     "react",
@@ -48,7 +48,7 @@
   "author": "Joel Davis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jtd2226/portfolio/issues"
+    "url": "https://github.com/jtd2226/stonklesjs/issues"
   },
-  "homepage": "https://github.com/jtd2226/portfolio#readme"
+  "homepage": "https://github.com/jtd2226/stonklesjs#readme"
 }
