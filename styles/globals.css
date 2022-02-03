@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* overflow: hidden; */
+  background: #131313;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  color: #a1a1ff;
+  border: none;
+  font-size: large;
+  transition: 0.3s;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 1;
+  cursor: default;
+}

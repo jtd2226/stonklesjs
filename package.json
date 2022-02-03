@@ -1,0 +1,51 @@
+{
+  "name": "stonklesjs",
+  "scripts": {
+    "dev": "next dev --port 5000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "serve": "next build && next start --port 5000"
+  },
+  "dependencies": {
+    "@deck.gl/core": "^8.6.8",
+    "@deck.gl/layers": "^8.6.8",
+    "@deck.gl/react": "^8.6.8",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "dayjs": "^1.10.7",
+    "lodash": "^4.17.21",
+    "next": "12.0.8",
+    "prism-react-renderer": "^1.2.1",
+    "prop-types": "^15.8.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-live": "^2.4.1",
+    "react-virtualized": "^9.22.3"
+  },
+  "devDependencies": {
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
+  },
+  "version": "1.0.0",
+  "description": "Useful generic react components and styling",
+  "main": ".eslintrc.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtd2226/portfolio.git"
+  },
+  "keywords": [
+    "react",
+    "next",
+    "styles"
+  ],
+  "author": "Joel Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jtd2226/portfolio/issues"
+  },
+  "homepage": "https://github.com/jtd2226/portfolio#readme"
+}
