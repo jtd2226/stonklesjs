@@ -13,6 +13,9 @@ COPY . .
 # If you add a package-lock.json, speed your build by switching to 'npm ci'.
 RUN yarn
 
+RUN cd red-ui && yarn build
+RUN cd red-react && yarn build
+
 # Copy local code to the container image.
 
 RUN yarn build
