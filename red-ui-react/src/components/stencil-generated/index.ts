@@ -7,7 +7,6 @@ import type { JSX } from 'red-ui';
 
 
 
-export const AppRoot = /*@__PURE__*/createReactComponent<JSX.AppRoot, HTMLAppRootElement>('app-root');
 export const AutoComplete = /*@__PURE__*/createReactComponent<JSX.AutoComplete, HTMLAutoCompleteElement>('auto-complete');
 export const FlexContainer = /*@__PURE__*/createReactComponent<JSX.FlexContainer, HTMLFlexContainerElement>('flex-container');
 export const TextInput = /*@__PURE__*/createReactComponent<JSX.TextInput, HTMLTextInputElement>('text-input');

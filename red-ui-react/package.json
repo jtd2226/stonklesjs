@@ -1,7 +1,7 @@
 {
   "name": "red-ui-react",
   "sideEffects": false,
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "React specific wrapper for component-library",
   "scripts": {
     "build": "npm run clean && npm run compile",
@@ -29,7 +29,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "red-ui": "^0.0.8"
+    "red-ui": "^0.0.9"
   },
   "peerDependencies": {
     "react": "^17.0.2",

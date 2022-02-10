@@ -39,11 +39,21 @@ button {
   font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial,
     sans-serif;
   flex: 1;
+  transition: transform 0.3s;
 }
 
 button:disabled {
   opacity: 0.5;
   cursor: default;
+  pointer-events: none;
+}
+
+button:hover {
+  transform: scale(1.02);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 p {

@@ -3,31 +3,7 @@ import { useRouter } from 'next/router';
 import Store from 'red-ui/dist/collection/Store';
 import { TextInput, AutoComplete } from 'red-ui-react';
 import countries from 'meta/countries.json';
-// import { Country, State, City } from 'country-state-city';
-// import fs from 'fs';
-
-// const countries = { names: '' };
-
-// export async function getServerSideProps() {
-//   const countries = Country.getAllCountries().reduce((countries, country) => {
-//     const statesOfCountry = State.getStatesOfCountry(country.isoCode);
-//     const states = statesOfCountry.reduce((states, state) => {
-//       states[state.name] = City.getCitiesOfState(country.isoCode, state.isoCode)
-//         .map(c => c.name)
-//         .join(';');
-//       return states;
-//     }, {});
-//     const names = statesOfCountry.map(s => s.name).join(';');
-//     countries[country.name] = { names, states };
-//     return countries;
-//   }, {});
-
-//   countries.names = Object.keys(countries).join(';');
-//   fs.writeFileSync('meta/countries.json', JSON.stringify(countries, null, 2));
-//   return {
-//     props: { countries },
-//   };
-// }
+import Request from 'network/cache';
 
 const useForm = Store({ first_name: '', last_name: '' });
 
@@ -201,6 +177,8 @@ function Step3() {
 
 const steps = [Step1, Step2, Step3];
 
+const register = Request.POST.path('/api/register');
+
 export default function Page() {
   const {
     query: { step = 0 },
@@ -208,44 +186,49 @@ export default function Page() {
     back,
   } = useRouter();
   const Step = steps[step] ?? steps[0];
+  const { send, data } = register.useSend();
+  console.log(data);
 
   const backDisabled = !steps[parseInt(step) - 1];
   const shouldSubmit = !steps[parseInt(step) + 1];
 
   const formRef = React.useRef();
-  const [_, setState] = useForm();
+  const [state, setState] = useForm();
+
+  const submit = React.useCallback(async () => {
+    const inputs = formRef.current.querySelectorAll(
+      'text-input, auto-complete'
+    );
+    const validity = await Promise.all(
+      Array.from(inputs).map(input => input.validate())
+    );
+    const valid = validity.reduce((validity, valid) => validity && valid, true);
+    if (!valid) return;
+    if (shouldSubmit) {
+      send(state);
+      setState({});
+      push('/');
+    } else {
+      push(`/?step=${parseInt(step) + 1}`);
+    }
+  }, [state, formRef, push, send]);
 
   return (
     <main>
-      <form ref={formRef} name="register">
+      <form
+        ref={formRef}
+        name="register"
+        onKeyUpCapture={e => {
+          if (e.key !== 'Enter') return;
+          submit();
+        }}
+      >
         <Step />
         <flex-container>
           <button disabled={backDisabled} type="button" onClick={() => back()}>
             Back
           </button>
-          <button
-            type="button"
-            onClick={async () => {
-              const inputs = formRef.current.querySelectorAll(
-                'text-input, auto-complete'
-              );
-              const validity = await Promise.all(
-                Array.from(inputs).map(input => input.validate())
-              );
-              console.log(validity);
-              const valid = validity.reduce(
-                (validity, valid) => validity && valid,
-                true
-              );
-              if (!valid) return;
-              if (shouldSubmit) {
-                setState({});
-                push('/');
-              } else {
-                push(`/?step=${parseInt(step) + 1}`);
-              }
-            }}
-          >
+          <button type="button" onClick={submit}>
             {shouldSubmit ? 'Submit' : 'Next'}
           </button>
         </flex-container>

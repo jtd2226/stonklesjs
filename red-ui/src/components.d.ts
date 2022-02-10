@@ -6,10 +6,6 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AppRoot {
-        "setState": () => any;
-        "state": any;
-    }
     interface AutoComplete {
         "label": string;
         "options": string;
@@ -30,12 +26,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
-    }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
-    };
     interface HTMLAutoCompleteElement extends Components.AutoComplete, HTMLStencilElement {
     }
     var HTMLAutoCompleteElement: {
@@ -55,17 +45,12 @@ declare global {
         new (): HTMLTextInputElement;
     };
     interface HTMLElementTagNameMap {
-        "app-root": HTMLAppRootElement;
         "auto-complete": HTMLAutoCompleteElement;
         "flex-container": HTMLFlexContainerElement;
         "text-input": HTMLTextInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppRoot {
-        "setState"?: () => any;
-        "state"?: any;
-    }
     interface AutoComplete {
         "label"?: string;
         "onPick"?: (event: CustomEvent<string>) => void;
@@ -85,7 +70,6 @@ declare namespace LocalJSX {
         "value"?: string;
     }
     interface IntrinsicElements {
-        "app-root": AppRoot;
         "auto-complete": AutoComplete;
         "flex-container": FlexContainer;
         "text-input": TextInput;
@@ -95,7 +79,6 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "auto-complete": LocalJSX.AutoComplete & JSXBase.HTMLAttributes<HTMLAutoCompleteElement>;
             "flex-container": LocalJSX.FlexContainer & JSXBase.HTMLAttributes<HTMLFlexContainerElement>;
             "text-input": LocalJSX.TextInput & JSXBase.HTMLAttributes<HTMLTextInputElement>;
