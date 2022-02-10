@@ -10,7 +10,7 @@ export const config: Config = {
   outputTargets: [
     react({
       componentCorePackage: 'red-ui',
-      proxiesFile: '../red-react/src/components/stencil-generated/index.ts',
+      proxiesFile: '../red-ui-react/src/components/stencil-generated/index.ts',
       excludeComponents: ['context-consumer'],
       includePolyfills: true,
     }),
