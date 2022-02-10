@@ -1,0 +1,49 @@
+:host {
+  position: relative;
+  flex: 1;
+}
+
+:host input {
+  font-size: 17px;
+  line-height: 1.23543;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  border: 1px solid #d6d6d6;
+  color: #333;
+  background: hsla(0, 0%, 100%, 0.8);
+  border-radius: 4px;
+  padding: 28px 16px 10px;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 51;
+}
+
+:host label {
+  color: #666;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  position: absolute;
+  top: 50%;
+  pointer-events: none;
+  transition: transform 0.3s;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 16px;
+}
+
+:host(.focus) label {
+  transform: scale(0.7) translateY(-150%) translateX(-15%);
+}
+
+:host(.invalid) input,
+:host(.invalid) label,
+:host(.invalid) {
+  color: #de071c;
+}
+
+:host(.invalid) input {
+  border: 1px solid #de071c;
+}

@@ -1,12 +1,12 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import dracula from 'prism-react-renderer/themes/dracula';
-import Mosaic from 'ui/mosaic';
-import Iterator from 'util/iteration';
-import { Page } from 'ui/page';
+import Mosaic from 'lib/ui/mosaic';
+import Iterator from 'lib/util/iteration';
+import { Page } from 'lib/ui/page';
 import Guides from 'docs/guides';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import useClickOutside from 'hooks/useClickOutside';
+import useClickOutside from 'lib/hooks/useClickOutside';
 
 function CopyIcon({ ...rest }) {
   return (
@@ -23,20 +23,19 @@ const PageContainer = styled(Page)`
   background: #131313;
   color: #dfdfdf;
   scroll-behavior: smooth;
-  ul {
-    margin: 0;
-  }
-  li {
-    font-size: large;
-  }
-  label {
-    color: #131313;
-  }
-  input {
-    background: #fdfdfd;
-  }
 `;
-
+// ul {
+//   margin: 0;
+// }
+// li {
+//   font-size: large;
+// }
+// label {
+//   color: #131313;
+// }
+// input {
+//   background: #fdfdfd;
+// }
 const CodeLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -58,15 +57,16 @@ const Copy = styled(CopyIcon)`
   height: 30px;
   width: 30px;
   opacity: 0.7;
-  &:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  &:focus {
-    opacity: 1;
-    color: green;
-  }
 `;
+
+// &:hover {
+//   opacity: 1;
+//   transform: scale(1.1);
+// }
+// &:focus {
+//   opacity: 1;
+//   color: green;
+// }
 
 const LiveCopy = styled.div`
   position: relative;
@@ -74,19 +74,19 @@ const LiveCopy = styled.div`
 
 const Example = styled.div`
   max-width: 100%;
-  article {
-    background: #dfdfdf;
-    color: #131313;
-    padding: 8px;
-    border-radius: 4px;
-  }
-  strong {
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-  }
 `;
 
+// article {
+//   background: #dfdfdf;
+//   color: #131313;
+//   padding: 8px;
+//   border-radius: 4px;
+// }
+// strong {
+//   display: block;
+//   text-align: center;
+//   margin-bottom: 20px;
+// }
 const Drawer = styled.div`
   position: fixed;
   top: 0;
@@ -100,17 +100,18 @@ const Drawer = styled.div`
   display: grid;
   grid-auto-rows: min-content;
   gap: 10px;
-  strong {
-    font-size: x-large;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  a {
-    font-size: large;
-    color: #dfdfdf;
-  }
 `;
+
+// strong {
+//   font-size: x-large;
+//   display: flex;
+//   gap: 20px;
+//   align-items: center;
+// }
+// a {
+//   font-size: large;
+//   color: #dfdfdf;
+// }
 
 const Expand = styled.div`
   height: 50px;

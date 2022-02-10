@@ -64,10 +64,10 @@ function Component() {
 
 imports
   .useSort({
-    path: 'hooks/useSort',
-    import: import('hooks/useSort'),
+    path: 'lib/hooks/useSort',
+    import: import('lib/hooks/useSort'),
   })
   .useArray({
-    path: 'hooks/useArray',
-    import: import('hooks/useArray'),
+    path: 'lib/hooks/useArray',
+    import: import('lib/hooks/useArray'),
   });

@@ -61,5 +61,5 @@ function Page() {
 
 imports.Mosaic({
   path: 'mosaic',
-  import: import('ui/mosaic'),
+  import: import('lib/ui/mosaic'),
 });

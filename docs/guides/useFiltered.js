@@ -88,10 +88,10 @@ function Component() {
 
 imports
   .useFiltered({
-    path: 'hooks/useFiltered',
-    import: import('hooks/useFiltered'),
+    path: 'lib/hooks/useFiltered',
+    import: import('lib/hooks/useFiltered'),
   })
   .useArray({
-    path: 'hooks/useArray',
-    import: import('hooks/useArray'),
+    path: 'lib/hooks/useArray',
+    import: import('lib/hooks/useArray'),
   });
