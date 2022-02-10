@@ -213,6 +213,7 @@ export default function Page() {
   const shouldSubmit = !steps[parseInt(step) + 1];
 
   const formRef = React.useRef();
+  const [_, setState] = useForm();
 
   return (
     <main>
@@ -238,6 +239,7 @@ export default function Page() {
               );
               if (!valid) return;
               if (shouldSubmit) {
+                setState({});
                 push('/');
               } else {
                 push(`/?step=${parseInt(step) + 1}`);
