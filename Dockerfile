@@ -14,7 +14,7 @@ COPY . .
 RUN yarn
 
 RUN cd red-ui && yarn && yarn build
-RUN cd red-react && yarn && yarn build
+RUN cd red-ui-react && yarn && yarn build
 
 # Copy local code to the container image.
 
