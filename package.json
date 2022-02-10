@@ -23,8 +23,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-live": "^2.4.1",
-    "react-virtualized": "^9.22.3",
-    "red-ui": "^0.0.6"
+    "react-virtualized": "^9.22.3"
   },
   "devDependencies": {
     "eslint": "8.7.0",
