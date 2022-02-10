@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import Store from 'red-ui/dist/collection/Store';
-import { TextInput, AutoComplete } from 'red-ui-react-v2';
+import { TextInput, AutoComplete } from 'red-ui-react';
 import countries from 'meta/countries.json';
 // import { Country, State, City } from 'country-state-city';
 // import fs from 'fs';
