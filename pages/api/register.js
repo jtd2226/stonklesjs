@@ -4,6 +4,9 @@ import fs from 'fs';
 export default async function register(req, res) {
   const user = req.body;
   user.id = uniqueId();
+  if (!fs.existsSync('meta/users.json')) {
+    fs.writeFileSync('meta/users.json', '{}');
+  }
   const userJson = fs.readFileSync('meta/users.json', { encoding: 'utf-8' });
   const users = JSON.parse(userJson);
   users[user.id] = user;
